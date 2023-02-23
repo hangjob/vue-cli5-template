@@ -1,0 +1,17 @@
+//css 节流
+@keyframes throttle {
+    from {
+        pointer-events: none;
+    }
+    to {
+        pointer-events: all;
+    }
+}
+
+.throttle {
+    animation: throttle 0.7s step-end forwards;
+
+    &:active {
+        animation: none;
+    }
+}
