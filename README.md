@@ -1,8 +1,10 @@
-### 更新组件库
+## Vue-cli5
 
-```shell
-npm install --registry=http://192.168.1.200:8081/repository/npm/ pm-ui-comps@xx.xx.xx -S 
-```
+Vue CLI 是一个基于 Vue.js 进行快速开发的完整系统，提供：
+
+- 通过 @vue/cli 实现的交互式的项目脚手架。
+- 通过 @vue/cli + @vue/cli-service-global 实现的零配置原型开发。
+- 一套完全图形化的创建和管理 Vue.js 项目的用户界面
 
 ### UI组件
 
@@ -519,3 +521,10 @@ server {
     }
 }
 ```
+
+> 如果使用Vue-cli3搭建的项目请看
+[一份完整的Vue-cli3项目基础配置项](https://github.com/hangjob/vue-admin)
+
+> 如果使用Vite搭建的项目请看
+[一份完整的Vite3项目基础配置项](https://github.com/hangjob/vue-bag-admin)
+
