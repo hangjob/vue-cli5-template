@@ -21,7 +21,7 @@ const isBuild = process.env.NODE_ENV === 'production'
  * @type {{test: string, web: string}}
  */
 const pages = {
-    web: 'src/html/web/main.js',
+    index: 'src/html/web/main.js',
     test: 'src/html/test/main.js',
 }
 

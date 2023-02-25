@@ -29,7 +29,7 @@ const createRouterInit = ({base, routes}) => {
 }
 
 const setupRouter = (app, options) => {
-    const {subName, base, ..._options} = Object.assign({routes: [], base: '/web/', subName: 'theme'}, options)
+    const {subName, base, ..._options} = Object.assign({routes: [], base: '/index/', subName: 'theme'}, options)
     const _routes = routes.find((item) => item.name === subName)
     _routes.children.push(..._options.routes)
     app.use(createRouterInit({routes, base}))

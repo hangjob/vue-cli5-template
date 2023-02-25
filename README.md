@@ -6,16 +6,6 @@ Vue CLI 是一个基于 Vue.js 进行快速开发的完整系统，提供：
 - 通过 @vue/cli + @vue/cli-service-global 实现的零配置原型开发。
 - 一套完全图形化的创建和管理 Vue.js 项目的用户界面
 
-### UI组件
-
-[Ant-Design-Vue](https://antdv.com/components/overview-cn)
-
-### 修改css变量
-
-```javascript
-document.documentElement.style.setProperty('--primary-color', 'red');
-```
-
 ### 安装依赖
 
 ```shell
@@ -64,14 +54,17 @@ npm run upload
 - ✅配置全局less
 - ✅开启分析打包日志
 - ✅打包进度
+- ✅全局组件通信
 - ✅注入全局变量
 - ✅打包CDN替换NPM包
 - ✅拷贝文件
 - ✅添加可选链运算符
 - ✅抽离重复文件合并
 - ✅配置px转换rem
+- ✅动态修改主题
 - ✅自动上传服务器
 - ✅Nginx配置
+- ✅全局事件通信
 
 ### 开启文件Gzip压缩
 
@@ -287,6 +280,18 @@ const WebpackBar = require('webpackbar');
 plugins.push(new WebpackBar({name: 'PC', color: '#07c160'}))
 ````
 
+### 全局组件通信
+
+```shell
+npm i mitt -S
+```
+
+```javascript
+import mitt from 'mitt'
+
+app.provide('$mitt', mitt())
+```
+
 ### 注入全局变量
 
 ```javascript
@@ -438,6 +443,26 @@ module.exports = {
 }
 ```
 
+### 动态修改主题
+
+```vue
+
+<template>
+	<a-config-provider>
+		<router-view></router-view>
+	</a-config-provider>
+</template>
+<script setup>
+import {ConfigProvider} from 'ant-design-vue';
+
+ConfigProvider.config({
+	theme: {
+		primaryColor: '#25b864',
+	},
+});
+</script>
+```
+
 ### 自动上传服务器
 
 > 执行命令
@@ -520,6 +545,16 @@ server {
       root   html;
     }
 }
+```
+
+### UI组件
+
+[Ant-Design-Vue](https://antdv.com/components/overview-cn)
+
+### 修改css变量
+
+```javascript
+document.documentElement.style.setProperty('--primary-color', 'red');
 ```
 
 > 如果使用Vue-cli3搭建的项目请看
